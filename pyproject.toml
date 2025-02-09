@@ -1,13 +1,19 @@
-[project]
+[tool.poetry]
 name = "python-template"
 version = "0.1.0"
 description = ""
 authors = ["Your Name <you@example.com>"]
-requires-python = ">=3.11"
-dependencies = [
-    "fastapi>=0.115.8",
-    "firebase-admin>=6.6.0",
-    "jose>=1.0.0",
-    "pydantic>=2.10.6",
-    "python-dotenv>=1.0.1",
-]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+fastapi = "^0.115.8"
+firebase-admin = "^6.6.0"
+jose = "^1.0.0"
+pydantic = "^2.10.6"
+python-dotenv = "^1.0.1"
+uvicorn = "^0.34.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
