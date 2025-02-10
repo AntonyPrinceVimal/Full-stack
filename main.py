@@ -101,7 +101,7 @@ async def signup(res:Response, sign:signup):
     user=collection.add(data)
     userId=user[1].id
     tokenn=createToken(userId)
-    res.set_cookie (key="token", value=tokenn, httponly=True, samesite="Lax", max_age=3600000000000000000)
+    res.set_cookie (key="token", value=tokenn, httponly=True, samesite="none", max_age=3600000000000000000)
     return "success"
 
 @app.post("/login")
@@ -115,7 +115,7 @@ async def login(res:Response, log:login):
       docId=doc.id
 
     tokenn=createToken(docId)
-    res.set_cookie(key="token", value=tokenn, httponly=True, samesite="Lax", max_age=3600000000000000000)
+    res.set_cookie(key="token", value=tokenn, httponly=True, samesite="none", max_age=3600000000000000000)
     return "logged and setted cookie"
   else:
     return "invalid username or password"
