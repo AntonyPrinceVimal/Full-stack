@@ -167,6 +167,13 @@ async def myProduct(req:Request):
     emptyList.append({"id":a.id,**a.to_dict()})
   return emptyList
 
+@app.get("/checkCookies")
+async def checkCookies(req: Request):
+    cookie = req.cookies.get("token")
+    if cookie:
+        return {"message": "Cookies exist!"}
+    return {"message": "No cookies found"}
+
 @app.post("/myPurchase")
 async def myPurchase (doc:Document, req:Request):
   cookie=req.cookies.get("token")
