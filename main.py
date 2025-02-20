@@ -35,7 +35,8 @@ app.add_middleware(
   allow_origins=["https://sammytester.netlify.app"],
   allow_credentials=True, 
   allow_methods=["*"], 
-  allow_headers=["*"]
+  allow_headers=["*"],
+  expose_headers=["Set-Cookie"] 
 )
 
 firebase_creds = {
