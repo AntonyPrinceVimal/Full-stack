@@ -110,9 +110,10 @@ async def login(res:Response, log:login):
   collection=db.collection("UserDemo")
   doc=collection.where("userName", "==", log.userName).where("password","==",log.password)
   existData=doc.stream()
-  if any(existData):
+  finalData=list(existData)
+  if finalData:
     docId=" banana"
-    for doc in existData:
+    for doc in finalData:
       docId=doc.id
 
     tokenn=createToken(docId)
