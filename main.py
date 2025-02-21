@@ -111,7 +111,7 @@ async def login(res:Response, log:login):
   doc=collection.where("userName", "==", log.userName).where("password","==",log.password)
   existData=doc.stream()
   if any(existData):
-    docId=None
+    docId=" banana"
     for doc in existData:
       docId=doc.id
 
