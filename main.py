@@ -97,7 +97,7 @@ async def signup(res:Response, sign:signup):
       "userName":sign.userName,
       "password":sign.password,
       "createdAt":currentTime,
-      " myPurchase":[]
+      "myPurchase":[]
     }
     user=collection.add(data)
     userId=user[1].id
